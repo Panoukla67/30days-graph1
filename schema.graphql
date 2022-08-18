@@ -3,6 +3,7 @@ type Event @entity{
   eventID: Bytes! 
   name: String
   description: String
+  link: String
   imageURL: String
   eventOwner: Bytes!
   eventTimestamp: BigInt!

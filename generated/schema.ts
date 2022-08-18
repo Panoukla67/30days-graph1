@@ -85,6 +85,23 @@ export class Event extends Entity {
     }
   }
 
+  get link(): string | null {
+    let value = this.get("link");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toString();
+    }
+  }
+
+  set link(value: string | null) {
+    if (!value) {
+      this.unset("link");
+    } else {
+      this.set("link", Value.fromString(<string>value));
+    }
+  }
+
   get imageURL(): string | null {
     let value = this.get("imageURL");
     if (!value || value.kind == ValueKind.NULL) {
